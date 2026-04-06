@@ -7,72 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .hub {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 24px;
-      text-align: center;
-    }
-
-    .hub-subtitle {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--primary-dim);
-      margin-bottom: 64px;
-    }
-
-    .hub-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 1100px;
-      width: 100%;
-    }
-
-    .hub-card {
-      display: flex;
-      flex-direction: column;
-      background-color: var(--surface-container-low);
-      padding: 48px 32px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .hub-card:hover {
-      background-color: var(--surface-container);
-    }
-
-    .hub-card .label-sm {
-      margin-bottom: 16px;
-      color: var(--primary-dim);
-    }
-
-    .hub-card .headline-sm {
-      margin-bottom: 16px;
-    }
-
-    .hub-card .body-text {
-      color: var(--on-surface);
-      margin-bottom: 24px;
-      flex-grow: 1;
-    }
-
-    .hub-card .btn {
-      align-self: flex-start;
-    }
-
-    @media (max-width: 768px) {
-      .hub-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -116,6 +50,33 @@
           Mosaic gallery with tradition, selection, and the barista's art.
         </p>
         <span class="btn btn-inverted">View Craft</span>
+      </a>
+
+      <a href="bridge.html" class="hub-card">
+        <span class="label-sm">Variant E — English</span>
+        <h2 class="headline-sm">The Bridge</h2>
+        <p class="body-text">
+          From the Dominican mountains to a Jacksonville tienda. The cultural bridge, told in English.
+        </p>
+        <span class="btn btn-primary">View Bridge</span>
+      </a>
+
+      <a href="puente.html" class="hub-card">
+        <span class="label-sm">Variant F — Español</span>
+        <h2 class="headline-sm">El Puente</h2>
+        <p class="body-text">
+          De las montañas dominicanas a tu mesa en Jacksonville. La misma historia, completamente en español.
+        </p>
+        <span class="btn btn-outlined">Ver El Puente</span>
+      </a>
+
+      <a href="dealla.html" class="hub-card">
+        <span class="label-sm">Variant G — Spanglish</span>
+        <h2 class="headline-sm">De Allá Pa'cá</h2>
+        <p class="body-text">
+          Same roots, new neighborhood. Code-switching between español and English, como se habla de verdad.
+        </p>
+        <span class="btn btn-secondary">View De Allá Pa'cá</span>
       </a>
     </div>
   </section>
