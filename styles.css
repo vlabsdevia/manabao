@@ -1003,3 +1003,104 @@ body::after {
     grid-column: span 2;
   }
 }
+
+/* ===== Import Checklist ===== */
+
+.checklist-phase {
+  margin-bottom: 24px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--outline-variant);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-item input[type="checkbox"] {
+  display: none;
+}
+
+.checklist-check {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--primary-dim);
+  background: transparent;
+  margin-top: 2px;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-check {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-check::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--on-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-text {
+  opacity: 0.4;
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-text strong {
+  text-decoration: line-through;
+}
+
+.checklist-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checklist-text strong {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-light);
+  transition: opacity 0.3s ease;
+}
+
+.checklist-detail {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--on-surface);
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .checklist-item {
+    padding: 16px 0;
+    gap: 12px;
+  }
+
+  .checklist-check {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checklist-item input[type="checkbox"]:checked ~ .checklist-check::after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+  }
+}
