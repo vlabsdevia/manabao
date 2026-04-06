@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --primary: #8D6E63;
+  --primary-light: #e4beb2;
+  --primary-dim: #d4a596;
+  --primary-container: #4d352b;
+  --secondary: #3E2723;
+  --tertiary: #BF360C;
+  --tertiary-container: #721900;
+  --background: #121212;
+  --surface: #131313;
+  --surface-container-low: #1a1614;
+  --surface-container: #211c19;
+  --on-surface: #e5e2e1;
+  --on-primary: #121212;
+  --outline-variant: rgba(229, 226, 225, 0.15);
+
+  /* Typography */
+  --font-headline: 'Noto Serif', serif;
+  --font-body: 'Space Grotesk', sans-serif;
+
+  /* Spacing */
+  --section-padding: 120px 24px;
+  --section-padding-mobile: 80px 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--on-surface);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-dim);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Typography Scale */
+.display-lg {
+  font-family: var(--font-headline);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--primary-light);
+}
+
+.headline-sm {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--primary-light);
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--on-surface);
+}
+
+.label-sm {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-surface);
+}
+
+@media (max-width: 768px) {
+  .display-lg {
+    font-size: 2.5rem;
+  }
+
+  .headline-sm {
+    font-size: 1.35rem;
+  }
+}
