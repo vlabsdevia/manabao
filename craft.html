@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manabao — The Craft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Craft-specific: Mosaic Gallery */
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60vh 40vh;
+      gap: 4px;
+    }
+
+    .mosaic__item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mosaic__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .mosaic__item:hover img {
+      transform: scale(1.03);
+    }
+
+    .mosaic__item--tall {
+      grid-row: 1 / -1;
+    }
+
+    .mosaic__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px;
+      background: linear-gradient(
+        to top,
+        rgba(18, 18, 18, 0.8) 0%,
+        rgba(18, 18, 18, 0) 100%
+      );
+    }
+
+    /* Craft-specific: Full-width quote band */
+    .quote-band {
+      padding: 100px 24px;
+      text-align: center;
+      background-color: var(--secondary);
+    }
+
+    .quote-band__text {
+      font-family: var(--font-headline);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Craft-specific: Side-by-side detail */
+    .craft-detail {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      min-height: 70vh;
+    }
+
+    .craft-detail__image {
+      overflow: hidden;
+    }
+
+    .craft-detail__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .craft-detail__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px;
+      background-color: var(--surface-container-low);
+    }
+
+    .craft-detail__content .label-sm {
+      margin-bottom: 20px;
+      color: var(--primary-dim);
+    }
+
+    .craft-detail__content .headline-sm {
+      margin-bottom: 20px;
+    }
+
+    .craft-detail__content .body-text {
+      margin-bottom: 16px;
+    }
+
+    .craft-detail--reverse {
+      direction: rtl;
+    }
+
+    .craft-detail--reverse > * {
+      direction: ltr;
+    }
+
+    .craft-detail--reverse .craft-detail__content {
+      background-color: var(--surface-container);
+    }
+
+    @media (max-width: 768px) {
+      .mosaic {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh 35vh 35vh;
+      }
+
+      .mosaic__item--tall {
+        grid-row: auto;
+      }
+
+      .quote-band {
+        padding: 60px 20px;
+      }
+
+      .quote-band__text {
+        font-size: 1.5rem;
+      }
+
+      .craft-detail {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .craft-detail__content {
+        padding: 48px 24px;
+      }
+
+      .craft-detail--reverse {
+        direction: ltr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Manabao</a>
+    <ul class="nav-links">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#tradition">Tradition</a></li>
+      <li><a href="#craft">Craft</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="background-image: url('img/hero-brand.png');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="origin-stamp">Artisanal</span>
+      <h1 class="display-lg">The Craft</h1>
+      <p class="hero-subtitle">Where tradition meets mastery</p>
+    </div>
+  </section>
+
+  <!-- Mosaic Gallery -->
+  <section id="gallery" class="mosaic">
+    <div class="mosaic__item mosaic__item--tall">
+      <img src="img/manabao_014.jpg" alt="Traditional Dominican cloth coffee brewing method">
+      <div class="mosaic__overlay">
+        <span class="label-sm" style="color: var(--primary-dim);">Traditional Brew</span>
+      </div>
+    </div>
+    <div class="mosaic__item">
+      <img src="img/manabao_030.jpg" alt="Latte art being poured into a cup">
+      <div class="mosaic__overlay">
+        <span class="label-sm" style="color: var(--primary-dim);">The Pour</span>
+      </div>
+    </div>
+    <div class="mosaic__item">
+      <img src="img/manabao_037.jpg" alt="Green coffee beans being loaded for roasting">
+      <div class="mosaic__overlay">
+        <span class="label-sm" style="color: var(--primary-dim);">Green to Gold</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Band -->
+  <section class="quote-band">
+    <p class="quote-band__text">
+      "Coffee is not manufactured.<br>It is cultivated, shaped by hand,<br>and perfected through patience."
+    </p>
+  </section>
+
+  <!-- Tradition Detail -->
+  <section id="tradition" class="craft-detail">
+    <div class="craft-detail__image">
+      <img src="img/manabao_014.jpg" alt="Cloth filter brewing in a traditional Dominican kitchen">
+    </div>
+    <div class="craft-detail__content">
+      <span class="label-sm">The Tradition</span>
+      <h2 class="headline-sm">Brewed Through Cloth, Not Machines</h2>
+      <p class="body-text">
+        In the mountains of Manabao, coffee has always been brewed through a cloth
+        filter — a method passed down through generations. The slow pour extracts a
+        clean, full-bodied cup that no machine can replicate.
+      </p>
+      <p class="body-text">
+        This is how our farmers start every morning, and it is the standard against
+        which we measure every roast.
+      </p>
+      <span class="origin-stamp" style="margin-top: 24px;">Dominican Heritage</span>
+    </div>
+  </section>
+
+  <!-- Craft Detail (reversed) -->
+  <section id="craft" class="craft-detail craft-detail--reverse">
+    <div class="craft-detail__image">
+      <img src="img/manabao_037.jpg" alt="Green coffee beans being carefully loaded into the roaster">
+    </div>
+    <div class="craft-detail__content">
+      <span class="label-sm">The Selection</span>
+      <h2 class="headline-sm">Every Bean, Chosen</h2>
+      <p class="body-text">
+        Before a single bean is roasted, it is graded by hand. Our green beans are
+        sorted for size, density, and color — removing any defect that could compromise
+        the cup. Only the highest-grade lots make it into our roaster.
+      </p>
+      <p class="body-text">
+        This attention to detail at every stage is what separates craft from commodity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Latte Art Full-Bleed -->
+  <section class="journey-image">
+    <img src="img/manabao_030.jpg" alt="Barista pouring latte art with Manabao coffee">
+    <div class="journey-image__caption">
+      <div class="journey-step" style="justify-content: center;">
+        <span class="label-sm" style="color: var(--primary-dim);">The Final Expression</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--low">
+    <div class="section-inner" style="max-width: 650px; text-align: center;">
+      <h2 class="headline-sm" style="margin-bottom: 24px;">Craft Deserves Craft</h2>
+      <p class="body-text">
+        From cloth-filtered tradition to the barista's pour — every step is intentional,
+        every cup is earned. This is Manabao.
+      </p>
+      <div style="margin-top: 48px;">
+        <a href="#" class="btn btn-primary">Experience the Craft</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">Manabao</div>
+    <p class="footer-tagline">Coffee from the Dominican Mountains</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="minimal.html">Minimal</a></li>
+      <li><a href="standard.html">Standard</a></li>
+      <li><a href="journey.html">Journey</a></li>
+    </ul>
+    <p class="footer-bottom">&copy; 2026 Manabao. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
