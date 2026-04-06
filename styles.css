@@ -763,6 +763,19 @@ body::after {
 
   .hub-cards {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hub {
+    padding: 60px 16px;
+  }
+
+  .hub-card {
+    padding: 32px 20px;
+  }
+
+  .hub-subtitle {
+    margin-bottom: 40px;
   }
 }
 
