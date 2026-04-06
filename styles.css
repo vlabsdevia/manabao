@@ -499,7 +499,7 @@ body::after {
   font-family: var(--font-headline);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--primary-container);
+  color: var(--primary-light);
   line-height: 1;
 }
 
