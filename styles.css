@@ -248,3 +248,243 @@ body::after {
     font-size: 0.75rem;
   }
 }
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 24px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 18, 18, 0.4) 0%,
+    rgba(18, 18, 18, 0.6) 50%,
+    rgba(18, 18, 18, 0.9) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-content .display-lg {
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary-dim);
+  margin-bottom: 24px;
+}
+
+.hero-content .origin-stamp {
+  margin-bottom: 32px;
+}
+
+/* Sections */
+.section {
+  padding: var(--section-padding);
+}
+
+.section--surface {
+  background-color: var(--surface);
+}
+
+.section--low {
+  background-color: var(--surface-container-low);
+}
+
+.section--container {
+  background-color: var(--surface-container);
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Two-Column Editorial Layout */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.editorial-grid__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-grid__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.editorial-grid__text {
+  padding: 60px;
+  position: relative;
+}
+
+.editorial-grid__text .headline-sm {
+  position: relative;
+  left: -40px;
+  margin-bottom: 24px;
+}
+
+.editorial-grid__text .body-text {
+  margin-bottom: 32px;
+}
+
+/* Product Highlight — Asymmetric */
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.product-image-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, var(--primary-container), var(--secondary));
+}
+
+.product-info .headline-sm {
+  margin-bottom: 12px;
+}
+
+.product-info .body-text {
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  color: var(--primary-light);
+  margin: 20px 0 28px;
+}
+
+/* Testimonials */
+.testimonial {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.testimonial-quote {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--primary-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.testimonial-attribution {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-dim);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--surface-container-low);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--primary-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.footer-nav a {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--on-surface);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--primary-light);
+}
+
+.footer-bottom {
+  font-size: 0.7rem;
+  color: rgba(229, 226, 225, 0.4);
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-grid__text {
+    padding: 40px 20px;
+  }
+
+  .editorial-grid__text .headline-sm {
+    left: 0;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
