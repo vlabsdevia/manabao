@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manabao — Design Variants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hub {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .hub-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary-dim);
+      margin-bottom: 64px;
+    }
+
+    .hub-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .hub-card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--surface-container-low);
+      padding: 48px 32px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .hub-card:hover {
+      background-color: var(--surface-container);
+    }
+
+    .hub-card .label-sm {
+      margin-bottom: 16px;
+      color: var(--primary-dim);
+    }
+
+    .hub-card .headline-sm {
+      margin-bottom: 16px;
+    }
+
+    .hub-card .body-text {
+      color: var(--on-surface);
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .hub-card .btn {
+      align-self: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .hub-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hub">
+    <span class="origin-stamp" style="margin-bottom: 32px;">Design Variants</span>
+    <h1 class="display-lg" style="margin-bottom: 12px;">Manabao</h1>
+    <p class="hub-subtitle">Coffee from the Dominican Mountains</p>
+
+    <div class="hub-cards">
+      <a href="minimal.html" class="hub-card">
+        <span class="label-sm">Variant A</span>
+        <h2 class="headline-sm">Minimal</h2>
+        <p class="body-text">
+          Hero, origin blurb, and a single call to action. Clean and focused.
+        </p>
+        <span class="btn btn-primary">View Minimal</span>
+      </a>
+
+      <a href="standard.html" class="hub-card">
+        <span class="label-sm">Variant B</span>
+        <h2 class="headline-sm">Standard</h2>
+        <p class="body-text">
+          Full editorial experience with origin story, product highlight, and testimonials.
+        </p>
+        <span class="btn btn-outlined">View Standard</span>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
