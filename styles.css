@@ -17,6 +17,7 @@
   --secondary: #3E2723;
   --tertiary: #BF360C;
   --tertiary-container: #721900;
+  --tertiary-light: #ffb5a1;
   --background: #121212;
   --surface: #131313;
   --surface-container-low: #1a1614;
@@ -183,7 +184,7 @@ body::after {
   display: inline-block;
   padding: 6px 16px;
   background-color: var(--tertiary-container);
-  color: #ffb5a1;
+  color: var(--tertiary-light);
   font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 500;
