@@ -1086,7 +1086,63 @@ body::after {
   opacity: 0.7;
 }
 
+/* ===== Sales Rep Page ===== */
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-period {
+  padding-top: 4px;
+}
+
+.experience-title {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.experience-company {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--primary-dim);
+  letter-spacing: 0.02em;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
 @media (max-width: 768px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .checklist-item {
     padding: 16px 0;
     gap: 12px;
